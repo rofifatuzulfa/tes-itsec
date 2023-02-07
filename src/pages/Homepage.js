@@ -16,8 +16,43 @@ import '../style/style.css'
 import LineChart from '../components/LineChart';
 import profil from '../public/profil.jpg'
 import Form from 'react-bootstrap/Form';
+import axios from "axios";
+import LineChart2 from '../components/LineChart2';
 
 const Homepage = () => {
+
+    const [usd, setUsd] = useState();
+    const [eur, setEur] = useState();
+    const [gbp, setGbp] = useState();
+
+    const getUsd = () => {
+        axios
+            .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+            .then((res) => setUsd(res.data.bpi.USD.rate))
+    };
+
+    const getEur = () => {
+        axios
+            .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+            .then((res) => setEur(res.data.bpi.EUR.rate))
+    };
+
+    const getGbp = () => {
+        axios
+            .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+            .then((res) => setUsd(res.data.bpi.GBP.rate))
+    };
+
+    useEffect(() => {
+        getUsd();
+        getEur();
+        getGbp();
+    }, []);
+
+    const labels1 = ['Jan', 'Feb', 'March', 'Apr', 'May', 'Jun', 'Jul'];
+    const datas1 = [50, 25, 40, 20, 15, 60, 30];
+    const labels2 = [usd, eur, gbp];
+    const datas2 = ['USD', 'EUR', 'GBP'];
 
   return (
     <div className='main-container'>

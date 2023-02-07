@@ -28,22 +28,22 @@ import axios from "axios";
     }]
  };
 
-//  const labels = ['Jan', 'Feb', 'March', 'Apr', 'May', 'Jun', 'Jul'];
-//  const datas = [50, 25, 40, 20, 15, 60, 30];
+ const labels = ['Jan', 'Feb', 'March', 'Apr', 'May', 'Jun', 'Jul'];
+ const datas = [50, 25, 40, 20, 15, 60, 30];
 
-//  export const data = {
-//     labels,
-//     datasets: [{
-//         data: datas,
-//         fill: true,
-//         borderColor: 'rgba(38,38,94,255)',
-//         tension: 0.5,
-//         backgroundColor: 'rgba(64,69,140,255)',
-//         borderWidth: 0.5
-//     }]
-//  };
+ export const data = {
+    labels,
+    datasets: [{
+        data: datas,
+        fill: true,
+        borderColor: 'rgba(38,38,94,255)',
+        tension: 0.5,
+        backgroundColor: 'rgba(64,69,140,255)',
+        borderWidth: 0.5
+    }]
+ };
 
-const LineChart = () => {
+const LineChart2 = () => {
 
     const [usd, setUsd] = useState();
     const [eur, setEur] = useState();
@@ -73,28 +73,27 @@ const LineChart = () => {
         getGbp();
     }, []);
     
-    const labels = ['Jan', 'Feb', 'March', 'Apr', 'May', 'Jun', 'Jul'];
-    const datas = [50, 25, 40, 20, 15, 60, 30];
+    // const labels = ['Jan', 'Feb', 'March', 'Apr', 'May', 'Jun', 'Jul'];
+    // const datas = [50, 25, 40, 20, 15, 60, 30];
     const labels2 = ['USD', 'EUR', 'GBP'];
-    const datas2 = [20, 30, 20];
+    const datas2 = [2, 3, 2];
 
-    const data = {
-        labels,
-        datasets: [{
-            data: datas,
-            fill: true,
-            borderColor: 'rgba(38,38,94,255)',
-            tension: 0.5,
-            backgroundColor: 'rgba(64,69,140,255)',
-            borderWidth: 0.5
-        }]
-     };
+    // const data = {
+    //     labels,
+    //     datasets: [{
+    //         data: datas,
+    //         fill: true,
+    //         borderColor: 'rgba(38,38,94,255)',
+    //         tension: 0.5,
+    //         backgroundColor: 'rgba(64,69,140,255)',
+    //         borderWidth: 0.5
+    //     }]
+    //  };
     
      const data2 = {
         labels2,
         datasets: [{
             data: datas2,
-            fill: true,
             borderColor: 'white',
             tension: 0.5,
             backgroundColor: 'white',
@@ -104,9 +103,9 @@ const LineChart = () => {
 
   return (
     <div>
-        <Line options={options} data={data} height={100}/>
+        <Line options={options} data={data2} height={100}/>
     </div>
   )
 }
 
-export default LineChart
+export default LineChart2
