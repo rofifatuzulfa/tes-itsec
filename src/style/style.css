@@ -1,0 +1,224 @@
+/* Homepage */
+.main-container {
+    background: rgba(41,31,104,255);
+}
+.body {
+    color: #a199dc;
+    padding: 15px;
+    width: 100%;
+}
+.burger-menu {
+    background: none;
+    color: #a199dc;
+    border: none;
+    border-radius: 5px;
+    /* display: none; */
+}
+.toggle {
+    display: none;
+}
+.input {
+    width: 100%;
+    padding-left: 5px;
+    padding-bottom: 15px;
+    background-color: transparent;
+    transition: transform 250ms ease-in-out;
+    font-size: 14px;
+    line-height: 18px;
+    color: #a199dc;
+    border: 1px solid #a199dc;
+    transition: all 250ms ease-in-out;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    outline: 0;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #a199dc;
+    border-radius: 0;
+    background-position: 100% center;
+}
+.top-nav {
+    justify-content: end;
+}
+.profil {
+    border-radius: 20px;
+}
+.icon2 {
+    text-align: center;
+}
+.language {
+    border: none;
+    background: none;
+}
+.sub-container {
+    min-height: 84vh;
+}
+.container1 {
+    height: 100%;
+    background: rgba(25,19,75,255);
+    border-radius: 10px;
+}
+.container2 {
+    flex-direction: column;
+    justify-content: space-between;
+    /* min-height: 84vh; */
+    height: 100%;
+    /* gap: 10px; */
+}
+.container21 {
+    /* min-height: 40.5vh; */
+    height: 100%;
+    border-radius: 10px;
+    background: rgba(25,19,75,255);
+}
+.container22 {
+    /* min-height: 40.5vh; */
+    height: 100%;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+.container221 {
+    border-radius: 10px;
+    background: rgba(25,19,75,255);
+}
+.day {
+    font-size: x-small;
+}
+.temp {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bolder;
+    font-size: smaller;
+}
+.bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+}
+.bar2 {
+    background: #8781b5;
+}
+.bar3 {
+    background: white;
+}
+.title {
+    font-size: smaller;
+}
+.box-detail {
+    grid-template-columns: auto auto auto;
+    row-gap: 30px;
+    column-gap: 15px;
+}
+.details {
+    width: 90px;
+    height: 130px;
+    background-color: #1d164f;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sub-title {
+    font-size: x-small;
+}
+.chart {
+    width: 70%;
+}
+.earnings-det {
+    width: 30%;
+}
+.dollar {
+    color: #a199dc;
+}
+.button-st {
+    background: #1d164f;
+    color: #a199dc;
+    border: none;
+    border-radius: 5px;
+}
+.button-sm {
+    background: rgba(78,73,187,255);
+    color: white;
+    border-radius: 5px;
+    border: 1px rgba(44,38,118,255);
+}
+
+/* Navbar */
+.header-box {
+    background: black;
+    width: 200px;
+    height: 90px;
+    margin-right: 20px;
+    box-shadow: #ece7e726 8px 8px 5px;;
+}
+.sidebar {
+    background: rgba(17,13,56,255);
+    min-height: 100vh;
+    width: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.sidebar2 {
+    background: rgba(17,13,56,255);
+    min-height: 100vh;
+    width: 100%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding-bottom: 10px;
+}
+.header-box2 {
+    background: black;
+    width: 100%;
+    height: 90px;
+    margin-right: 20px;
+    box-shadow: #ece7e726 8px 8px 5px;;
+}
+.menu {
+    color: #8781b5;
+}
+.icon {
+    margin-right: 15px;
+}
+
+/* Body */
+
+@media(max-width: 767px) {
+    .main-container {
+        flex-wrap: wrap;
+    }
+    .style-sidebar {
+        width: 100%;
+    }
+    .sidebar {
+        display: none;
+    }
+    .toggle {
+        display: block;
+    }
+    .top-nav {
+        justify-content: space-between;
+        margin-top: 30px;
+    }
+    .sub-container1 {
+        margin-bottom: 20px;
+    }
+    .chart {
+        width: 100%;
+    }
+    .earnings-det {
+        width: 100%;
+    }
+}
+
+@media (min-width : 767.98px) and (max-width : 1023.98px) {
+    .top-nav {
+        justify-content: space-around;
+        margin-top: 30px;
+    }
+    .container2 {
+        margin-top: 20px;
+    }
+    .chart {
+        width: 100%;
+    }
+    .earnings-det {
+        width: 100%;
+    }
+}
