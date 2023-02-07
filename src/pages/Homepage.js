@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Image from 'react-bootstrap/Image'
 import { Col, Container, Dropdown, Row } from 'react-bootstrap'
 import SideBar from '../components/Navbar'
-import { RiListCheck, RiBarChartHorizontalFill, RiContrastDropFill, RiArrowLeftRightFill, RiCloseLine } from "react-icons/ri";
+import { RiListCheck, RiBarChartHorizontalFill, RiContrastDropFill, RiArrowLeftRightFill, RiSignalTowerFill } from "react-icons/ri";
 import { AiOutlineSearch, AiOutlineCloud, AiOutlineEye, AiFillFile } from "react-icons/ai";
 import { BsBell, BsSunFill } from "react-icons/bs";
 import { CiMail } from "react-icons/ci";
@@ -10,7 +10,9 @@ import { IoMdTennisball } from "react-icons/io";
 import { WiMoonWaxingCrescent3 } from "react-icons/wi";
 import { CiSun } from "react-icons/ci";
 import { TfiCreditCard } from "react-icons/tfi";
-import { HiDownload } from "react-icons/hi";
+import { HiDownload, HiSignal } from "react-icons/hi";
+import { MdWaves } from "react-icons/md";
+import { TbCircleDotted } from "react-icons/tb";
 
 import '../style/style.css'
 import LineChart from '../components/LineChart';
@@ -20,40 +22,6 @@ import axios from "axios";
 import LineChart2 from '../components/LineChart2';
 
 const Homepage = () => {
-
-    const [usd, setUsd] = useState();
-    const [eur, setEur] = useState();
-    const [gbp, setGbp] = useState();
-
-    const getUsd = () => {
-        axios
-            .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-            .then((res) => setUsd(res.data.bpi.USD.rate))
-    };
-
-    const getEur = () => {
-        axios
-            .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-            .then((res) => setEur(res.data.bpi.EUR.rate))
-    };
-
-    const getGbp = () => {
-        axios
-            .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-            .then((res) => setUsd(res.data.bpi.GBP.rate))
-    };
-
-    useEffect(() => {
-        getUsd();
-        getEur();
-        getGbp();
-    }, []);
-
-    const labels1 = ['Jan', 'Feb', 'March', 'Apr', 'May', 'Jun', 'Jul'];
-    const datas1 = [50, 25, 40, 20, 15, 60, 30];
-    const labels2 = [usd, eur, gbp];
-    const datas2 = ['USD', 'EUR', 'GBP'];
-
   return (
     <div className='main-container'>
         <div className='d-flex main-container'>
@@ -142,9 +110,9 @@ const Homepage = () => {
                                             <div>14%</div>
                                         </div>
                                         <div className='details d-flex'>
-                                            <div><RiContrastDropFill size={30} /></div>
-                                            <div >Humidity</div>
-                                            <div>14%</div>
+                                            <div><MdWaves size={30} /></div>
+                                            <div>Wind</div>
+                                            <div>5 km/h</div>
                                         </div>
                                         <div className='details d-flex'>
                                             <div><CiSun size={30} /></div>
@@ -157,14 +125,14 @@ const Homepage = () => {
                                             <div>N/A</div>
                                         </div>
                                         <div className='details d-flex'>
-                                            <div><RiContrastDropFill size={30} /></div>
-                                            <div >Humidity</div>
-                                            <div>14%</div>
+                                            <div><RiSignalTowerFill size={30} /></div>
+                                            <div >Pressure</div>
+                                            <div>24.25 in</div>
                                         </div>
                                         <div className='details d-flex'>
-                                            <div><RiContrastDropFill size={30} /></div>
-                                            <div >Humidity</div>
-                                            <div>14%</div>
+                                            <div><TbCircleDotted size={30} /></div>
+                                            <div >Dew Point</div>
+                                            <div>11&deg;</div>
                                         </div>
                                     </div>
                                 </div>
