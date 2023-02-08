@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { RiDashboardFill, RiLayout5Fill, RiLayoutBottom2Fill, RiMapPinAddFill, RiCloseLine,  } from "react-icons/ri";
 import { IoMdMail } from "react-icons/io";
 import { IoMdBrush } from "react-icons/io";
@@ -9,44 +9,38 @@ import { RxHamburgerMenu } from "react-icons/rx";
 
 import '../style/style.css'
 
-const SideBar = () => {
-
-    const [toggle, setToggle] = useState(false);
-
-    const handleToggle = () => {
-        setToggle(!toggle);
-    }
+const SideBar = ({toInbox, toDashboard, toggle, handleToggle}) => {
 
   return (
     <div>
         <div>
-                <button className='toggle button-st mt-2 mx-2 p-1' onClick={() => handleToggle()}>
-                    {toggle ? (
-                        <RiCloseLine size={20} />
-                    ) : (
-                        <RxHamburgerMenu size={20} />
-                    )} Menu
-                </button>
+            <button className='toggle button-st mt-2 mx-2 p-1' onClick={() => handleToggle()}>
+                {toggle ? (
+                    <RiCloseLine size={20} />
+                ) : (
+                    <RxHamburgerMenu size={20} />
+                )} Menu
+            </button>
             </div>
         <div className='sidebar px-2 pt-3'>
             <div className='header-box'>
             </div>
             <div>
                 <div className='menu pt-5'>
-                    <div className='menu-title mb-3'><span className='icon'><RiDashboardFill size={28} /></span>Dashboard</div>
-                    <div className='menu-title mb-3'><span className='icon'><RiLayout5Fill size={28} /></span>Forms</div>
-                    <div className='menu-title mb-3'><span className='icon'><IoMdMail size={28} /></span>Inbox</div>
-                    <div className='menu-title mb-3'><span className='icon'><MdOutlineViewCarousel size={28} /></span>Stepper</div>
-                    <div className='menu-title mb-3'><span className='icon'><IoMdBrush size={28} /></span>Ui Elements</div>
-                    <div className='menu-title mb-3'><span className='icon'><RiLayout5Fill size={28} /></span>Layout</div>
-                    <div className='menu-title mb-3'><span className='icon'><RxDragHandleDots2 size={28} /></span>Icons</div>
-                    <div className='mb-3'>Layout</div>
-                    <div className='menu-title mb-3'><span className='icon'><RiLayoutBottom2Fill size={28} /></span>Subheaders</div>
-                    <div className='menu-title mb-3'><span className='icon'><MdViewList size={28} /></span>Builder</div>
-                    <div className='menu-title mb-3'><span className='icon'><RxSwitch size={28} /></span>General</div>
-                    <div className='mb-3'>Components</div>
-                    <div className='menu-title mb-3'><span className='icon'><ImTable2 size={28} /></span>Tables</div>
-                    <div className='menu-title mb-3'><span className='icon'><RiMapPinAddFill size={28} /></span>Maps</div>
+                    <div className='menu-title p-2' onClick={() => toDashboard()}><span className='icon'><RiDashboardFill size={28} /></span>Dashboard</div>
+                    <div className='menu-title p-2'><span className='icon'><RiLayout5Fill size={28} /></span>Forms</div>
+                    <div className='menu-title p-2' onClick={() => toInbox()}><span className='icon'><IoMdMail size={28} /></span>Inbox</div>
+                    <div className='menu-title p-2'><span className='icon'><MdOutlineViewCarousel size={28} /></span>Stepper</div>
+                    <div className='menu-title p-2'><span className='icon'><IoMdBrush size={28} /></span>Ui Elements</div>
+                    <div className='menu-title p-2'><span className='icon'><RiLayout5Fill size={28} /></span>Layout</div>
+                    <div className='menu-title p-2'><span className='icon'><RxDragHandleDots2 size={28} /></span>Icons</div>
+                    <div className='p-2'>Layout</div>
+                    <div className='menu-title p-2'><span className='icon'><RiLayoutBottom2Fill size={28} /></span>Subheaders</div>
+                    <div className='menu-title p-2'><span className='icon'><MdViewList size={28} /></span>Builder</div>
+                    <div className='menu-title p-2'><span className='icon'><RxSwitch size={28} /></span>General</div>
+                    <div className='p-2'>Components</div>
+                    <div className='menu-title p-2'><span className='icon'><ImTable2 size={28} /></span>Tables</div>
+                    <div className='menu-title p-2'><span className='icon'><RiMapPinAddFill size={28} /></span>Maps</div>
                 </div>
             </div>
         </div>
@@ -74,9 +68,6 @@ const SideBar = () => {
             </div>
         </div>
         ) : null}
-        {/* <div className='content'>
-
-        </div> */}
     </div>
   )
 }
